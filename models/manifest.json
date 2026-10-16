@@ -1,0 +1,318 @@
+{
+  "repository": "a0905352668-source/steam-drip-detection",
+  "tag": "v1.0.0",
+  "assets": [
+    {
+      "task": "steam",
+      "path": "steam/checkpoints/best.pt",
+      "asset": "steam-v8.1.pt",
+      "role": "default",
+      "size_bytes": 36341533,
+      "sha256": "c3af5ded6ba0576164c3914cc44a537aeb4d6a6497d2c4a0de9409d07fce2391",
+      "source_relative_path": "Steam_Detection/checkpoints/best.pt",
+      "epoch": 25,
+      "classes": [
+        "no_steam",
+        "steam"
+      ],
+      "arch": "x3d_m",
+      "profile": {
+        "frames": 48,
+        "size_h": 256,
+        "size_w": 256,
+        "mean": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "std": [
+          0.25,
+          0.25,
+          0.25
+        ]
+      }
+    },
+    {
+      "task": "steam",
+      "path": "steam/checkpoints/best.onnx",
+      "asset": "steam-v7.2.onnx",
+      "role": "legacy-deployment",
+      "size_bytes": 11938839,
+      "sha256": "e49c4f13f5bc53b80ed38eee285015fe31e58f45d9fb2f0173d268477b8c4545",
+      "source_relative_path": "Steam_Detection/checkpoints/best.onnx",
+      "profile": {
+        "frames": 48,
+        "size_h": 256,
+        "size_w": 256,
+        "mean": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "std": [
+          0.25,
+          0.25,
+          0.25
+        ]
+      }
+    },
+    {
+      "task": "steam",
+      "path": "steam/checkpoints/best.engine",
+      "asset": "steam-v7.2.engine",
+      "role": "hardware-specific",
+      "size_bytes": 13466988,
+      "sha256": "da7b849779997ffb239c6fee1586882fb6ba6b206ba943f8eecbdf39e97d8f8c",
+      "source_relative_path": "Steam_Detection/checkpoints/best.engine",
+      "profile": {
+        "frames": 48,
+        "size_h": 256,
+        "size_w": 256,
+        "mean": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "std": [
+          0.25,
+          0.25,
+          0.25
+        ]
+      }
+    },
+    {
+      "task": "steam",
+      "path": "steam/weights/steam_x3d.pth",
+      "asset": "steam-x3d.pth",
+      "role": "historical",
+      "size_bytes": 36342916,
+      "sha256": "f62494e13d90ebece5980ceba41c59abfc3b53aadd7adaeec27d50ce8309ce66",
+      "source_relative_path": "Steam_Detection/weights/steam_x3d.pth",
+      "epoch": 22,
+      "classes": [
+        "no_steam",
+        "steam"
+      ],
+      "arch": "x3d_m",
+      "profile": {
+        "frames": 48,
+        "size_h": 256,
+        "size_w": 256,
+        "mean": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "std": [
+          0.25,
+          0.25,
+          0.25
+        ]
+      }
+    },
+    {
+      "task": "steam",
+      "path": "steam/weights/steam_x3d_v2.pth",
+      "asset": "steam-x3d-v2.pth",
+      "role": "historical",
+      "size_bytes": 36347705,
+      "sha256": "94b73524a7472620d3ef18cf723568eda97607343570a02732550cbcdc1d3f3f",
+      "source_relative_path": "Steam_Detection/weights/steam_x3d_v2.pth",
+      "epoch": 10,
+      "classes": [
+        "no_steam",
+        "steam"
+      ],
+      "arch": "x3d_m",
+      "profile": {
+        "frames": 48,
+        "size_h": 256,
+        "size_w": 256,
+        "mean": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "std": [
+          0.25,
+          0.25,
+          0.25
+        ]
+      }
+    },
+    {
+      "task": "drip",
+      "path": "drip/checkpoints_v4.28.1/OKepoch_40.pt",
+      "asset": "drip-v4.28.1-epoch40.pt",
+      "role": "default",
+      "size_bytes": 36341262,
+      "sha256": "ba3ec3433e1a900f87f44c9b6eeb0eb01c1b96be2f47b3f2c10521e86ae045fb",
+      "source_relative_path": "Drip_Detection/checkpoints_v4.28.1/OKepoch_40.pt",
+      "epoch": 40,
+      "classes": [
+        "nodrip",
+        "drip"
+      ],
+      "arch": "x3d_m",
+      "profile": {
+        "frames": 36,
+        "size_h": 480,
+        "size_w": 224,
+        "mean": [
+          0.05,
+          0.05,
+          0.05
+        ],
+        "std": [
+          0.15,
+          0.15,
+          0.15
+        ]
+      }
+    },
+    {
+      "task": "drip",
+      "path": "drip/checkpoints_v4.28.1/OKepoch_40.onnx",
+      "asset": "drip-v4.28.1-epoch40.onnx",
+      "role": "default",
+      "size_bytes": 11938839,
+      "sha256": "1783e5cb16cd6c88b34945c5cfda49d60ad417521c34d9d6920397304a69af96",
+      "source_relative_path": "Drip_Detection/checkpoints_v4.28.1/OKepoch_40.onnx",
+      "profile": {
+        "frames": 36,
+        "size_h": 480,
+        "size_w": 224,
+        "mean": [
+          0.05,
+          0.05,
+          0.05
+        ],
+        "std": [
+          0.15,
+          0.15,
+          0.15
+        ]
+      }
+    },
+    {
+      "task": "drip",
+      "path": "drip/checkpoints/best.pt",
+      "asset": "drip-historical-best.pt",
+      "role": "historical-different-profile",
+      "size_bytes": 36341661,
+      "sha256": "c27f6cffebcbb7e09cf876aa7ef9d849bf4ce3c58f4c01c906c47f4ede0bfe9e",
+      "source_relative_path": "Drip_Detection/checkpoints/best.pt",
+      "epoch": 40,
+      "classes": [
+        "nodrip",
+        "drip"
+      ],
+      "arch": "x3d_m",
+      "profile": {
+        "frames": 36,
+        "size_h": 480,
+        "size_w": 226,
+        "mean": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "std": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "task": "drip",
+      "path": "drip/weights/drip_x3d_v2.pth",
+      "asset": "drip-x3d-v2.pth",
+      "role": "historical",
+      "size_bytes": 36345725,
+      "sha256": "9c649e6ba3c8b08b187057f6f8831d7c190ffbf72872b690bcd2519d704385aa",
+      "source_relative_path": "Drip_Detection/drip_x3d_v2.pth",
+      "epoch": 15,
+      "classes": [
+        "nodrip",
+        "drip"
+      ],
+      "arch": "x3d_m",
+      "profile": {
+        "frames": 36,
+        "size_h": 480,
+        "size_w": 224,
+        "mean": [
+          0.05,
+          0.05,
+          0.05
+        ],
+        "std": [
+          0.15,
+          0.15,
+          0.15
+        ]
+      }
+    },
+    {
+      "task": "steam",
+      "path": "steam/checkpoints_v7.2/epoch_25.pt",
+      "asset": "steam-v7.2-epoch25.pt",
+      "role": "historical",
+      "size_bytes": 36341597,
+      "sha256": "b8b5165d6b8156616c4551832feee9ee11e54aa8bcd2b2c082a1f7b755ebf958",
+      "source_relative_path": "X3D_video/model/steam_check_v7.2/epoch_25.pt",
+      "epoch": 25,
+      "classes": [
+        "no_steam",
+        "steam"
+      ],
+      "arch": "x3d_m",
+      "profile": {
+        "frames": 48,
+        "size_h": 256,
+        "size_w": 256,
+        "mean": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "std": [
+          0.25,
+          0.25,
+          0.25
+        ]
+      }
+    },
+    {
+      "task": "steam",
+      "path": "steam/checkpoints_v7.3/epoch_25.pt",
+      "asset": "steam-v7.3-epoch25.pt",
+      "role": "historical",
+      "size_bytes": 36341597,
+      "sha256": "4ccef48d68c5238f2e97e1a7f8780504f6d87f8e0fd46d069f8fbb5e0a19e749",
+      "source_relative_path": "X3D_video/model/steam_check_v7.3/epoch_25.pt",
+      "epoch": 25,
+      "classes": [
+        "no_steam",
+        "steam"
+      ],
+      "arch": "x3d_m",
+      "profile": {
+        "frames": 48,
+        "size_h": 256,
+        "size_w": 256,
+        "mean": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "std": [
+          0.25,
+          0.25,
+          0.25
+        ]
+      }
+    }
+  ]
+}

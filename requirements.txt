@@ -1,0 +1,11 @@
+# Python 3.10 recommended. CUDA users: install matching torch/torchvision first.
+torch==2.5.0
+torchvision==0.20.0
+pytorchvideo==0.1.5
+av==15.1.0
+opencv-python==4.12.0.88
+numpy>=2.0,<2.1
+scikit-learn==1.6.1
+tqdm==4.67.1
+onnx==1.19.1
+onnxruntime==1.19.2
