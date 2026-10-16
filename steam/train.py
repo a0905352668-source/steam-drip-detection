@@ -457,6 +457,9 @@ def main():
     warnings.filterwarnings("once", category=UserWarning)
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=str, required=True, help="数据根目录，包含 train/ val/")
+    parser.add_argument("--classes", nargs=2, default=("no_steam", "steam"),
+                        metavar=("NEGATIVE", "POSITIVE"), help="二分类目录名称及 checkpoint 类别顺序")
+    parser.add_argument("--init-checkpoint", type=str, help="仅载入模型权重进行微调，不恢复优化器或训练进度")
     parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument("--freeze_epochs", type=int, default=3, help="线性探测epoch数，仅训分类头")
     parser.add_argument("--batch", type=int, default=8)
@@ -531,8 +534,10 @@ def main():
     torch.backends.cudnn.allow_tf32 = True
     torch.backends.cudnn.benchmark = True
 
-    # 数据集（类别固定为 no_steam/steam）
-    classes = ("no_steam", "steam")
+    # 数据集（默认 no_steam/steam，可通过 --classes 设置）
+    classes = tuple(args.classes)
+    if len(set(classes)) != 2:
+        raise ValueError("两个类别名称不能相同")
     print(f"[Input Size] H×W = {args.size_h}×{args.size_w}")
     print(f"[Norm] mean={args.mean} std={args.std}")
     print(f"[PosAug] gray_p={args.pos_gray_p} jitter_p={args.pos_jitter_p} "
@@ -611,6 +616,11 @@ def main():
 
     # 模型
     model = build_model(args.arch, args.frames, args.size_h, num_classes=2, pretrained=bool(args.pretrained)).to(device)
+    if args.init_checkpoint:
+        initial = torch.load(args.init_checkpoint, map_location="cpu", weights_only=False)
+        model.load_state_dict(initial["state_dict"], strict=True)
+        print(f"[Initialize] {args.init_checkpoint}; source classes={initial.get('classes')}; target classes={classes}")
+        del initial
 
     # 线性探测：先冻结 backbone
     set_backbone_trainable(model, trainable=False, arch=args.arch)
